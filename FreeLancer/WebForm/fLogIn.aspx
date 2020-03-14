@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
         <div>
             <h1>Hello from Log In Page</h1>
+            <h2>Hello from Log In Page</h2>
         </div>
     </form>
 </body>
