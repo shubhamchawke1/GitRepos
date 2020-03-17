@@ -27,8 +27,7 @@ namespace MyCoreWebApp
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Worker Process Name : "
-                    + System.Diagnostics.Process.GetCurrentProcess().ProcessName);
+                await context.Response.WriteAsync("Hello World!");
             });
         }
     }
