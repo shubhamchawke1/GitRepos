@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MyCoreWebApp
+namespace FirstCoreMVCApplication
 {
     public class Startup
     {
@@ -15,6 +15,7 @@ namespace MyCoreWebApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,11 +26,8 @@ namespace MyCoreWebApp
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Worker Process Name : "
-                    + System.Diagnostics.Process.GetCurrentProcess().ProcessName);
-            });
+            app.UseMvcWithDefaultRoute();
+
         }
     }
 }
